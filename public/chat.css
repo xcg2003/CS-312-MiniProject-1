@@ -1,0 +1,19 @@
+body{
+    font-family: Arial, sans-serif;  /* Sets the font for the page */
+    margin: 0;  /* Removes default margin */
+    padding: 0;  /* Removes default padding */
+    background-color: #f4f4f4;  /* Sets a light background color */
+    text-align: center; /* Centers content */
+}
+
+
+#message{
+    width: 500px;      /* Makes the textarea wide */
+    height: 200px;     /* Makes the textarea tall */
+    font-size: 12px;   /* Sets the text inside to be small */
+    padding: 10px;     /* Adds padding inside the textarea */
+    border: 2px solid #ccc;  /* Adds a light border */
+    border-radius: 5px;  /* Slightly rounds the corners */
+    box-sizing: border-box;  /* Ensures padding doesn't affect the width */
+    resize: vertical;  /* Allows vertical resizing */
+}
