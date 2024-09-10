@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Middle ware to parse the request body
+// Middle ware to parse the json data
 app.use(express.json());
 
 // Middleware to parse URL-encoded form data
