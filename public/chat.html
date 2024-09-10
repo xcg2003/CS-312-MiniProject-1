@@ -11,11 +11,11 @@
     <h1 id="title">Welcome to the Chat</h1>
     
     <h3 id="instructions">Enter Your Chat</h3>
-    <form id="post">
-        <input type="text" id="username" placeholder="Username"><br>
+    <form id="post" method="POST" action="/">
+        <input type="text" id="username" name="username" placeholder="Username"><br>
         <br>
-        <textarea type="text" id="message" placeholder="Message"></textarea><br>
-        <button type="submit" onclick="getChatFromUser()" >Send</button>
+        <textarea type="text" id="message" name="message" placeholder="Message"></textarea><br>
+        <button type="submit">Send</button>
     </form>
 
     <script src="chat.js"></script>
