@@ -37,9 +37,11 @@ app.post('/', (req, res) => {
 });
 
 app.get("/chatpage", (req, res) => {
-    res.send(pageMessages);
+    res.sendFile(path.join(__dirname, 'public', 'displayMessages.html'));
     res.status(200);
 });
+
+
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
