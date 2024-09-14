@@ -45,6 +45,12 @@ app.get("/blogpost", (req, res) => {
     res.render('displayMessage', { messages: pageMessages });
 });
 
+app.delete('/post/:id', (req, res) => {
+    const postId = req.params.id;
+    pageMessages = pageMessages.filter(msg => msg._id !== postId);
+    res.status(200).json({ success: true });
+});
+
 
 
 app.listen(port, () => {
