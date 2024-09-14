@@ -33,14 +33,15 @@ app.post('/', (req, res) => {
     const title = req.body.title;
     const username = req.body.username;
     const message = req.body.message;
+    const date = new Date();
     if(!title || !username || !message) {
         return res.status(400).send("Username and message are required");
     }
-    pageMessages.push({ title, username, message });
-    res.redirect('/chatpage');
+    pageMessages.push({ _id: Date.now().toString(), title, username, message, date });
+    res.redirect('/blogpost');
 });
 
-app.get("/chatpage", (req, res) => {
+app.get("/blogpost", (req, res) => {
     res.render('displayMessage', { messages: pageMessages });
 });
 

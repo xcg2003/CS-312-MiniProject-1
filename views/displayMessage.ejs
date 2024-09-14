@@ -10,10 +10,11 @@
     <div id="messages">
         <% messages.forEach(function(msg) { %>
             <h4><%= msg.title %></h4>
-            <p><strong><%= msg.username %>:</strong> <%= msg.message %></p>
+            <p><strong><%= msg.username %>:</strong> <%= msg.message %> <strong> <%= new Date(msg.date).toLocaleTimeString() %> </strong></p>
             <button onclick="editPost('<%= msg._id %>')">Edit</button>
+            <button onclick="deletePost('<%= msg._id %>')">Delete</button>
         <% }); %>
     </div>
-    <a href="/chat.html">Go back to chat</a>
+    <a href="/chat.html">Add Another Blog</a>
 </body>
 </html>
