@@ -17,6 +17,9 @@ app.use(express.json());
 // Middleware to parse URL-encoded form data
 app.use(express.urlencoded({ extended: true }));
 
+// Set the view engine to ejs
+app.set('view engine', 'ejs');
+
 // array of messages
 let pageMessages = [];
 
@@ -37,8 +40,7 @@ app.post('/', (req, res) => {
 });
 
 app.get("/chatpage", (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'displayMessages.html'));
-    res.status(200);
+    res.render('displayMessage', { messages: pageMessages });
 });
 
 
