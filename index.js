@@ -30,12 +30,13 @@ app.get('/', (req, res) => {
 
 // TODO: post does not save right now
 app.post('/', (req, res) => {
+    const title = req.body.title;
     const username = req.body.username;
     const message = req.body.message;
-    if(!username || !message) {
+    if(!title || !username || !message) {
         return res.status(400).send("Username and message are required");
     }
-    pageMessages.push({ username, message });
+    pageMessages.push({ title, username, message });
     res.redirect('/chatpage');
 });
 

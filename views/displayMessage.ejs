@@ -6,10 +6,12 @@
     <title>Display Message</title>
 </head>
 <body>
-    <h1><%= "Hello" %></h1>
+    <h1><%= "Blog Posts:" %></h1>
     <div id="messages">
         <% messages.forEach(function(msg) { %>
+            <h4><%= msg.title %></h4>
             <p><strong><%= msg.username %>:</strong> <%= msg.message %></p>
+            <button onclick="editPost('<%= msg._id %>')">Edit</button>
         <% }); %>
     </div>
     <a href="/chat.html">Go back to chat</a>
