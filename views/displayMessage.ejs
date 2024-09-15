@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/displayMessage.css">
     <title>Display Message</title>
 </head>
 <body>
     <h1><%= "Blog Posts:" %></h1>
     <div id="messages">
         <% messages.forEach(function(msg) { %>
-            <h4><%= msg.title %></h4>
-            <p><strong><%= msg.username %>:</strong> <%= msg.message %> <strong> <%= new Date(msg.date).toLocaleTimeString() %> </strong></p>
-            <button onclick="editPost('<%= msg._id %>')">Edit</button>
-            <button onclick="deletePost('<%= msg._id %>')">Delete</button>
+            <div class="post">
+                <h4><%= msg.title %></h4>
+                <p><strong><%= msg.username %>:</strong> <%= msg.message %></p>
+                <p><strong> <%= new Date(msg.date).toLocaleTimeString() %> </strong></p>
+                <button onclick="editPost('<%= msg._id %>')">Edit</button>
+                <button onclick="deletePost('<%= msg._id %>')">Delete</button>
+            </div>
         <% }); %>
     </div>
-    <a href="/chat.html">Add Another Blog</a>
+    <a id="newBlogLink" href="/chat.html">Add Another Blog</a>
 
     <script src="/displayMessage.js" ></script>
 </body>
