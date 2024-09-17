@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Middle ware to parse the json data
-app.use(express.json());
+app.use(express.json());``
 
 // Middleware to parse URL-encoded form data
 app.use(express.urlencoded({ extended: true }));
@@ -28,7 +28,6 @@ app.get('/', (req, res) => {
     res.status(200);
 });
 
-// TODO: post does not save right now
 app.post('/', (req, res) => {
     const title = req.body.title;
     const username = req.body.username;
